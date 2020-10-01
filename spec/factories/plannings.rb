@@ -8,10 +8,19 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-require 'test_helper'
 
-class PlanningTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+FactoryBot.define do
+  factory :planning do
+    sequence :name do |n|
+      "Planning #{n}"
+    end
+
+    factory :active_planning do
+      status { 'active' }
+    end
+
+    factory :completed_planning do
+      status { 'completed' }
+    end
+  end
 end

@@ -33,5 +33,5 @@ docker-compose run web rake db:seed
 #### Run the test
 
 ```
-docker-compose run web rake test
+docker-compose run web rspec
 ```

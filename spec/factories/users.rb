@@ -1,15 +1,17 @@
 # == Schema Information
 #
-# Table name: plannings
+# Table name: users
 #
 #  id         :bigint           not null, primary key
 #  name       :string           not null
-#  status     :integer          default(0), not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-one:
-  id: 1
-  name: "Test"
-  status: "completed"
+FactoryBot.define do
+  factory :user do
+    sequence :name do |n|
+      "User #{n}"
+    end
+  end
+end

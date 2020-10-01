@@ -10,9 +10,11 @@
 #  updated_at  :datetime         not null
 #
 class Vote < ApplicationRecord
+  RATINGS = [1, 2, 3, 5, 8].freeze
+
   belongs_to :user, required: true
   belongs_to :planning, required: true
 
   validates :user_id, uniqueness: {scope: :planning_id}
-  validates :rating, inclusion: { in: [1, 2, 3, 5, 8] }
+  validates :rating, inclusion: { in:  self::RATINGS }
 end
