@@ -35,3 +35,13 @@ docker-compose run web rake db:seed
 ```
 docker-compose run web rspec
 ```
+
+#### Run the poker
+
+```
+docker-compose run web rake poker:start
+```
+
+```
+docker-compose run web rake poker:vote
+```

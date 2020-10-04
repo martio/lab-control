@@ -15,6 +15,6 @@ class Vote < ApplicationRecord
   belongs_to :user, required: true
   belongs_to :planning, required: true
 
-  validates :user_id, uniqueness: {scope: :planning_id}
-  validates :rating, inclusion: { in:  self::RATINGS }
+  validates :user_id, uniqueness: {scope: :planning_id, message: 'The user has already voted'}
+  validates :rating, inclusion: { in: self::RATINGS, message: 'The rating is incorrect' }
 end
